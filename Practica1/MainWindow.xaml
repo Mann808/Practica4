@@ -1,0 +1,28 @@
+﻿<Window x:Class="Practica1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practica1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="auto" MinHeight="250"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="ClientGrid" Grid.Column="0" Click="Button_Click" Width="auto" Margin="15,25,15,25">Таблица клиенты</Button>
+        <Button Grid.Column="1" Click="Button_Click1" Width="auto" Margin="15,25,15,25">Таблица заказы</Button>
+        <Button Grid.Column="2" Click="Button_Click2" Width="auto" Margin="15,25,15,25">Таблица оплата</Button>
+        <DataGrid x:Name="clientdatagrid" Grid.Row="1" Grid.Column="1" CurrentCellChanged="clientdatagrid_CurrentCellChanged"/>
+        <Button Grid.Row="2" Width="auto" Margin="15,15,15,15" Content="Изменить данные" Grid.Column="0" Click="Button_Click_change"/>
+        <Button Grid.Row="1" Width="auto" Margin="15,15,15,15" Content="Добавить данные" Grid.Column="0" Click="Button_Click_add" Height="40"/>
+        <Frame x:Name="PageFrame" NavigationUIVisibility="Hidden" Navigated="PageFrame_Navigated" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"/>
+    </Grid>
+</Window>
